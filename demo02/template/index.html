@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <h1>index</h1>
+    <p>{{.news.Title}}</p>
+    <!--变量赋值-->
+    {{$t := .title }}
+
+    <br>
+    <h4>{{$t}}</h4>
+
+    <!--条件判断-->
+    {{if ge .score 60}}
+        <p>及格</p>
+    {{else}}
+        <p>不及格</p>
+    {{end}}
+
+    <!--循环遍历-->
+    <u1>
+        {{range $key, $value := .hobby}}
+            <li>{{$value}}</li>
+        {{end}}
+    </u1>
+
+    <!--自定义模板函数-->
+    {{.data}}
+    <br>
+    {{UnixToTime .data}}
+</body>
+</html>
